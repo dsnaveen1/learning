@@ -2,11 +2,28 @@ import React, { Component } from 'react';
 import { AppRegistry, Text, View,Image } from 'react-native';
 
 class Greeting extends Component {
+  // blynck code start
+  constructor(props) {
+    super(props);
+    this.state = { isShowingText: true };
+
+    // Toggle the state every second
+    setInterval(() => (
+      this.setState(previousState => (
+        { isShowingText: !previousState.isShowingText }
+      ))
+    ), 1000);
+  }
+  // bynck code end
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
-      
+    // blynck render
+    if (!this.state.isShowingText) {
+      return null;
+    }
+   // blynck render end
     return (
       <View style={{alignItems: 'center'}}>
         <Text>My Porject </Text> 
