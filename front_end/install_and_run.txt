@@ -1,0 +1,15 @@
+to install expo setting
+----------------------------------------
+expo init <dirctory name>
+
+
+
+to run
+----------------------------------------
+npm start 
+
+
+
+to open tool
+-----------------------------------------
+code .
