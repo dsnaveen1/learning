@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View,Image } from 'react-native';
+import { AppRegistry,StyleSheet, Text, View,Image } from 'react-native';
+const styles = StyleSheet.create({
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
 class Blync extends Component {
   // blynck code start
   constructor(props){
@@ -10,7 +20,7 @@ class Blync extends Component {
       this.setState(previousState=>(
         {isShowingText: !previousState.isShowingText }
       ))
-    ),1000);
+    ),5000);
   }
     // bynck code end
     render(){
@@ -18,7 +28,7 @@ class Blync extends Component {
         return null;
       }
       return(
-        <Text> My Porject {this.props.name} </Text>
+        <Text style={styles.bigBlue}> My Porject {this.props.name} </Text>
       );
     
   }
@@ -33,7 +43,7 @@ class Greeting extends Component {
     };
     return (
       <View style={{alignItems: 'center'}}>
-        <Text>Hello {this.props.name}!</Text>
+        <Text style={styles.red}>Hello {this.props.name}!</Text>
         <Image source={pic} style={{width: 193, height: 110}}/>
       </View>
     );
@@ -46,7 +56,7 @@ export default class LotsOfGreetings extends Component {
     
     return (
       <View style={{alignItems: 'center'}}>
-        <Blync name = " "/>
+        <Blync> name = " "</Blync>
         <Greeting name='Rexxar' pic='pic'/>
         {/*  to add new img pass pic='location'*/ }
         <Greeting name='Jaina' />      
