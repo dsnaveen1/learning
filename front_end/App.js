@@ -55,7 +55,8 @@ export default class LotsOfGreetings extends Component {
   render() {
     
     return (
-      <View style={{alignItems: 'center'}}>
+      <View style={{flex: 1,alignItems: 'center'}}>
+      <View style={{height:50,width: 500, backgroundColor: 'powderblue'}} />
         <Blync> name = " "</Blync>
         <Greeting name='Rexxar' pic='pic'/>
         {/*  to add new img pass pic='location'*/ }
