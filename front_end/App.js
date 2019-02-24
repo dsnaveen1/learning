@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry,StyleSheet, Text, View,Image } from 'react-native';
+import { AppRegistry,StyleSheet, Text,TextInput, View,Image } from 'react-native';
 const styles = StyleSheet.create({
   bigBlue: {
     color: 'blue',
@@ -51,9 +51,14 @@ class Greeting extends Component {
 }
 
 export default class LotsOfGreetings extends Component {
- 
+  constructor(props){
+    super(props);
+    this.state={text: ''}
+  }
   render() {
-    
+    var field1 = this.state.field1;
+    var field2 = this.state.field2;
+    const result = field1&&field2?field1+field2:null;
     return (
       <View style={{flex: 1,alignItems: 'center'}}>
       <View style={{height:50,width: 500, backgroundColor: 'powderblue'}} />
@@ -62,7 +67,19 @@ export default class LotsOfGreetings extends Component {
         {/*  to add new img pass pic='location'*/ }
         <Greeting name='Jaina' />      
         <Greeting name='Valeera' />
-        
+        <TextInput  
+        style={{height: 40}}
+        placeholder="Enter Here"
+        onChangeText={(text)=>this.setState({field1:parseInt(text)})}
+        />
+        <TextInput  
+        style={{height: 40}}
+        placeholder="Enter Here"
+        onChangeText={(text)=>this.setState({field2:parseInt(text)})}
+        />
+         <Text style={{padding: 10, fontSize: 42}}>
+          {result?<Text>{result}</Text>:null}
+        </Text>
       </View>
     );
   }
