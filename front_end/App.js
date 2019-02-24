@@ -65,8 +65,6 @@ export default class LotsOfGreetings extends Component {
         <Blync> name = " "</Blync>
         <Greeting name='Rexxar' pic='pic'/>
         {/*  to add new img pass pic='location'*/ }
-        <Greeting name='Jaina' />      
-        <Greeting name='Valeera' />
         <TextInput  
         style={{height: 40}}
         placeholder="Enter Here"
@@ -78,8 +76,17 @@ export default class LotsOfGreetings extends Component {
         onChangeText={(text)=>this.setState({field2:parseInt(text)})}
         />
          <Text style={{padding: 10, fontSize: 42}}>
-          {result?<Text>{result}</Text>:null}
+          {result?<Text>{result}</Text>:null} 
         </Text>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Enter to transalte"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10, fontSize: 42}}>
+          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
+        
       </View>
     );
   }
